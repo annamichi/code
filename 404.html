@@ -4,13 +4,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Site Design | Anna Tomberg's Portfolio Site</title>
+  <title>404 | Page not found | Anna Tomberg's Portfolio Site</title>
 
   <!-- CSS -->
   <link rel="stylesheet" href="/common/css/reset.css">
   <link rel="stylesheet" href="/common/css/style.css">
   <link rel="stylesheet" href="/common/css/works.css">
-  <link rel="stylesheet" href="/common/css/portfolio.css">
 
   <!-- JS -->
   <script src="/common/js/jquery-3.3.1.min.js"></script>
@@ -18,11 +17,11 @@
   <script src="/common/js/an.js"></script>
 
 </head>
-<body>
+<body id="page-404">
   <header>
     <div class="logo">
       <a href="/">
-        <img src="/common/images/logo.svg" alt="Anwedesign">
+        <img src="/common/images/logo_bk.svg" alt="Anwedesign">
       </a>
     </div>
     <div class="sp-menu-btn">
@@ -35,7 +34,7 @@
         <img src="/common/images/x-btn.svg" alt="Close">
       </div>
       <ul class="nav-menu">
-        <li><a href="/index.html">Top</a></li>
+        <li><a href="/">Top</a></li>
         <li><a href="/index.html#works">Works</a></li>
         <li><a href="/index.html#about">About</a></li>
         <li><a href="/index.html#experience">Experience</a></li>
@@ -44,125 +43,22 @@
     </nav>
   </header>
   <main>
-    <section id="top">
-      <div class="wrapper">
-        <h1><img src="/work02/images/myportfolio.svg" alt="My Portfolio"></h1>
-        <div class="flex">
-          <div class="text-box">
-            <h2>Task and Goal</h2>
-            <p>This is a redesign concept for my new portfolio site, since the old one was already out of date, and didn’t fulfill it’s goals.</p>
-            <p>The new one is meant to be more intuitive, richer in information and, of course, more beautiful. It’s main goal is to give fullest information of the site’s owner (e.g. me), her projects, skills, and background.</p>
-            <p>All of the work from concept to coding was done solely by myself.</p>
-          </div>
-          <div class="img-box">
-            <img src="/work02/images/iphone.png" alt="Smartphone Responsive Design">
-            <img src="/work02/images/imac.png" alt="Desktop Responsive Design">
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="board">
-      <div class="wrapper">
-        <h2>Moodboard</h2>
-        <div class="board-box">
-          <div class="text-box">
-            <p>Main reference for this work was Stripe’s website. I was impressed by a flowing gradient at the top of the site, and thought this would add a necessary attention point to the portfolio.</p>
-            <p>I have also created a moodboard to keep consistency in the design and to get an image of the colors suitable for this work.</p>
-          </div>
-          <div class="grid-8ver2">
-            <div class="pos-left">
-              <div class="item"><picture><source srcset="/work02/images/mood_img01sp.jpg" media="(max-width: 768px)"><img src="/work02/images/mood_img01.jpg" alt="Pink metal board"></picture></div>
-              <div class="item"><picture><source srcset="/work02/images/mood_img04sp.jpg" media="(max-width: 768px)"><img src="/work02/images/mood_img04.jpg" alt="iMac"></picture></div>
-              <div class="item"><picture><source srcset="/work02/images/mood_img06sp.jpg" media="(max-width: 768px)"><img src="/work02/images/mood_img06.jpg" alt="Flamingo in macro shot photography"></picture></div>
-              <div class="item"><picture><source srcset="/work02/images/mood_img05sp.jpg" media="(max-width: 768px)"><img src="/work02/images/mood_img05.jpg" alt="Pink Sunrise over Grotto Mountain"></picture></div>
-            </div>
-            <div class="pos-right">
-              <!-- <div class="item">
-                <div class="text-box">
-                  <p>Main reference for this work was Stripe’s website. I was impressed by a flowing gradient at the top of the site, and thought this would add a necessary attention point to the portfolio.</p>
-                  <p>I have also created a moodboard to keep consistency in the design and to get an image of the colors suitable for this work.</p>
-                </div>
-              </div> -->
-              <div class="item"><picture><source srcset="/work02/images/mood_img02sp.jpg" media="(max-width: 768px)"><img src="/work02/images/mood_img02.jpg" alt="Purple park"></picture></div>
-              <div class="item"><picture><source srcset="/work02/images/mood_img03sp.jpg" media="(max-width: 768px)"><img src="/work02/images/mood_img03.jpg" alt="After sunset - Warsaw bridge Edit: Adam Nieścioruk"></picture></div>
-              <div class="item"><picture><source srcset="/work02/images/mood_img07sp.jpg" media="(max-width: 768px)"><img src="/work02/images/mood_img07.jpg" alt="Lemons on pink"></picture></div>
-              <div class="item"><picture><source srcset="/work02/images/mood_img08sp.jpg" media="(max-width: 768px)"><img src="/work02/images/mood_img08.jpg" alt="Lower Antelope Canyon, LeChee, United States"></picture></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="wfs">
-      <div class="wrapper">
-        <h2>Wireframes</h2>
-        <p class="pos-left">I’ve  started with defining potential viewers, creating user personas and trying to understand their needs and using patterns.</p>
-        <p class="pos-right">Then I proceeded with creating wireframes, starting with the sitemap, and continuing with low-fidelity wireframes and high-fidelity wireframes in Figma.</p>
+    <div class="wrapper">
+      <div class="flex">
         <div class="img-box">
-          <img src="/work02/images/sitemap.svg" alt="Sitemap">
-          <img src="/work02/images/wireframe top.svg" alt="Low-fid wireframe">
-          <img src="/work02/images/wireframe high fid.svg" alt="High-fid wireframe">
+          <img src="/common/images/404.svg" alt="Page Not Found">
+        </div>
+        <div class="text-box">
+          <h1>Page Not Found!</h1>
+          <p>We're sorry, the page you requested could not be found.<br>Please go back to the previous page or use the link below.</p>
+          <div class="btn btn-main"><a href="/">Go to the Top Page</a></div>
         </div>
       </div>
-    </section>
-    <section id="misc">
-      <div class="wrapper">
-        <div class="flex">
-          <div class="item">
-            <h2>Points</h2>
-            <ul class="triangle-mark">
-              <li>After setting purposes, user personas and creating the sitemap, I recreated 3 of my main reference site top pages directly in Figma, all from the sratch.</li>
-              <li>I used Sass as a preprocessor, JQuery for interactions and PHP for my form.</li>
-              <li>I didn’t use any library for my top page, except for JQuery, ‘cause I wanted it to be more lightweight.</li>
-            </ul>
-            <p>Here you can find my <a href="https://www.figma.com/file/Tb5EIrSpZcP1BOwQNah2KC/My-Portfolio-Site?node-id=605%3A2" target="_blank" class="underline">Figma design file.</a></p>
-          </div>
-          <div class="item">
-            <h2>Colors</h2>
-            <ul class="grid-5 colors">
-              <li>#FEF9F3</li>
-              <li>#271B12</li>
-              <li>#3E002C</li>
-              <li>#FBB009</li>
-              <li>#C1015D</li>
-            </ul>
-            <h2>Typography</h2>
-            <h3>Large Headings</h3>
-            <div class="font-pic">
-              <picture><source srcset="/work02/images/font_sora_sp.png" media="(max-width: 768px)"><img src="/work02/images/font_sora.png" alt="Font Sora Example"></picture>
-            </div>
-            <h3>Other Headings and paragraph text</h3>
-            <div class="font-pic">
-              <picture><source srcset="/work02/images/font_lato_sp.png" media="(max-width: 768px)"><img src="/work02/images/font_lato.png" alt="Font Lato Example"></picture>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="thanks">
-      <h3>Thanks for watching!</h3>
-    </section>
-    <!-- <section id="contact">
-      <div class="wrapper">
-        <h2 class="content-title">Contact Me</h2>
-        <form action="/thanks.html" method="post" class="slideup">
-          <div class="field">
-            <input type="text" name="name" id="name" value="" placeholder="Name" required>
-            <label for="name">Name</label>
-          </div>
-          <div class="field">
-            <input type="email" name="email" id="email" value="" class="<?php echo $alertClass2; ?>" placeholder="Email" required>
-            <label for="email">Email</label>
-          </div>
-          <div class="field">
-            <textarea name="message" id="message" placeholder="Message" required></textarea>
-          <label for="message">Message</label>
-        </div>
-        <input type="submit" class="btn" name="submit" value="Send">
-        </form>
-      </div>
-    </section> -->
+
+    </div>
   </main>
   <footer>
+
     <ul class="sns-icons">
       <li>
         <a href="https://www.linkedin.com/in/anna-tomberg-tln/" target="_blank">

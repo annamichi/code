@@ -37,6 +37,12 @@ img
 .mbs
   margin-bottom: 10px!important
 
+[class^="grid-"]
+  display: grid
+
+.flex
+  display: flex
+
 canvas
   position: absolute
   top: 0
@@ -72,11 +78,15 @@ header
     width: 450px
     a
       color: $white
+      body#page-404 &
+        color: $black
       text-transform: lowercase
       letter-spacing: 2px
       transition: color .4s ease-out
       &:hover
         color: mix(white, $accSecC, 20%)
+        body#page-404 &
+          color: $accSecC
 
 
 .wrapper
@@ -358,7 +368,7 @@ main
         height: 37.5px
 
   #experience
-    background: linear-gradient(to right, $bgMainC 50%, $black 50%)
+    background: url(/images/bg_white_check.svg) center / 40px auto, linear-gradient(to right, $bgMainC 50%, $black 50%)
     padding-bottom: 260px
     .content-title
       padding-top: 190px
@@ -567,6 +577,8 @@ main
 
 footer
   background-color: $bgMainC
+  body#page-404 &
+    background-color: $black
   padding: 20px 0 0
   @include mq(min, 1300)
     padding: 30px 0 0
@@ -595,6 +607,59 @@ footer
     padding: 10px
     line-height: 1.2
 
+body#page-404
+  main
+    min-height: calc(100vh - 98px - 55px)
+    @include mq(min, 1024)
+      min-height: calc(100vh - 120px - 68px)
+  .wrapper
+    padding-top: 200px
+    @include mq(max, 1023)
+      padding-top: 100px
+  .flex
+    justify-content: space-between
+    @include mq(max, 1023)
+      flex-direction: column
+  .img-box, .text-box
+    margin-bottom: 40px
+    @include mq(min, 1024)
+      width: 46%
+  .img-box
+    @include mq(max, 1023)
+      width: 90%
+      margin-left: auto
+      margin-right: auto
+  h1
+    font-weight: 900
+    font-size: 300%
+    @include mq(max, 1023)
+      font-size: 150%
+    text-transform: uppercase
+    letter-spacing: 4px
+    margin-bottom: 30px
+  .text-box
+    line-height: 1.75
+    font-size: 110%
+    display: flex
+    flex-direction: column
+  .btn
+    margin-top: 50px
+    margin-bottom: 30px
+    a
+      border-radius: 4px
+      padding: 15px 20px
+      @include mq(max, 1023)
+        padding: 12px 16px
+  .btn-main
+    a
+      background: $accSecC
+      color: $white
+      text-transform: uppercase
+      font-size: 80%
+      font-weight: 700
+      transition: background .4s ease-out
+      &:hover
+        background: mix($accMainC, $accSecC, 15%)
 
 @import _animations
 @import _sp

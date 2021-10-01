@@ -46,6 +46,17 @@ img {
   margin-bottom: 10px !important;
 }
 
+[class^="grid-"] {
+  display: -ms-grid;
+  display: grid;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 canvas {
   position: absolute;
   top: 0;
@@ -107,8 +118,16 @@ header .nav-menu a {
   transition: color .4s ease-out;
 }
 
+body#page-404 header .nav-menu a {
+  color: #271B12;
+}
+
 header .nav-menu a:hover {
   color: #ffc733;
+}
+
+body#page-404 header .nav-menu a:hover {
+  color: #ffb900;
 }
 
 .wrapper {
@@ -449,8 +468,8 @@ main #about .about_box::after {
 }
 
 main #experience {
-  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #3E002C), color-stop(50%, #271B12));
-  background: linear-gradient(to right, #3E002C 50%, #271B12 50%);
+  background: url(/images/bg_white_check.svg) center/40px auto, -webkit-gradient(linear, left top, right top, color-stop(50%, #3E002C), color-stop(50%, #271B12));
+  background: url(/images/bg_white_check.svg) center/40px auto, linear-gradient(to right, #3E002C 50%, #271B12 50%);
   padding-bottom: 260px;
 }
 
@@ -800,6 +819,10 @@ footer {
   padding: 20px 0 0;
 }
 
+body#page-404 footer {
+  background-color: #271B12;
+}
+
 @media screen and (min-width: 1300px) {
   footer {
     padding: 30px 0 0;
@@ -842,6 +865,115 @@ footer .copy {
   width: 100%;
   padding: 10px;
   line-height: 1.2;
+}
+
+body#page-404 main {
+  min-height: calc(100vh - 98px - 55px);
+}
+
+@media screen and (min-width: 1024px) {
+  body#page-404 main {
+    min-height: calc(100vh - 120px - 68px);
+  }
+}
+
+body#page-404 .wrapper {
+  padding-top: 200px;
+}
+
+@media screen and (max-width: 1023px) {
+  body#page-404 .wrapper {
+    padding-top: 100px;
+  }
+}
+
+body#page-404 .flex {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (max-width: 1023px) {
+  body#page-404 .flex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+body#page-404 .img-box, body#page-404 .text-box {
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 1024px) {
+  body#page-404 .img-box, body#page-404 .text-box {
+    width: 46%;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  body#page-404 .img-box {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+body#page-404 h1 {
+  font-weight: 900;
+  font-size: 300%;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 1023px) {
+  body#page-404 h1 {
+    font-size: 150%;
+  }
+}
+
+body#page-404 .text-box {
+  line-height: 1.75;
+  font-size: 110%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body#page-404 .btn {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+body#page-404 .btn a {
+  border-radius: 4px;
+  padding: 15px 20px;
+}
+
+@media screen and (max-width: 1023px) {
+  body#page-404 .btn a {
+    padding: 12px 16px;
+  }
+}
+
+body#page-404 .btn-main a {
+  background: #ffb900;
+  color: #FEF9F3;
+  text-transform: uppercase;
+  font-size: 80%;
+  font-weight: 700;
+  -webkit-transition: background .4s ease-out;
+  transition: background .4s ease-out;
+}
+
+body#page-404 .btn-main a:hover {
+  background: #f69d0e;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -1045,7 +1177,7 @@ footer .copy {
     position: absolute;
   }
   main #experience {
-    background: #271B12;
+    background: url(/images/bg_white_check.svg) center/20px auto, #271B12;
     padding-bottom: 30px;
   }
   main #experience .content-title {
@@ -1111,7 +1243,7 @@ footer .copy {
     border-left: none;
   }
   main #experience .exp-grid .edu {
-    background: #3E002C;
+    background: url(/images/bg_white_check.svg) center/20px auto, #3E002C;
   }
   main #experience .exp-grid .edu::after {
     background: repeating-linear-gradient(to right, #ffb900 1px, #ffb900 3px, transparent 3px, transparent 5px);
@@ -1121,7 +1253,7 @@ footer .copy {
     color: #ffb900;
   }
   main #experience .exp-grid .work {
-    background: #271B12;
+    background: url(/images/bg_white_check.svg) center/20px auto, #271B12;
   }
   main #experience .exp-grid .work::after {
     background: repeating-linear-gradient(to right, #f40175 1px, #f40175 3px, transparent 3px, transparent 5px);
@@ -1258,6 +1390,9 @@ footer .copy {
     background: #FEF9F3;
     height: 2px;
     border-radius: 1px;
+  }
+  body#page-404 .sp-menu-btn .line {
+    background: #271B12;
   }
   .sp-menu-btn .line {
     width: 18px;

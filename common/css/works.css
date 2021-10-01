@@ -8,17 +8,6 @@ body p + p {
   margin-top: 14px;
 }
 
-[class^="grid-"] {
-  display: -ms-grid;
-  display: grid;
-}
-
-.flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 h2 {
   color: #F9B64C;
   font-size: 310%;

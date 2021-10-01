@@ -118,7 +118,7 @@
         content: ""
         position: absolute
     #experience
-      background: $black
+      background: url(/images/bg_white_check.svg) center / 20px auto, $black
       padding-bottom: 30px
       .content-title
         padding-top: $titleTop
@@ -168,7 +168,7 @@
           border-left: none
           // border-top: 1px dashed
         .edu
-          background: $bgMainC
+          background:  url(/images/bg_white_check.svg) center / 20px auto, $bgMainC
           // border-color: $accSecC
           &::after
             background: repeating-linear-gradient(to right, $accSecC 1px, $accSecC 3px, transparent 3px, transparent 5px)
@@ -177,7 +177,7 @@
               content: "EDUCATION"
               color: $accSecC
         .work
-          background: $black
+          background: url(/images/bg_white_check.svg) center / 20px auto, $black
           // border-color: lighten($accMainC, 10%)
           &::after
             background: repeating-linear-gradient(to right, lighten($accMainC, 10%) 1px, lighten($accMainC, 10%) 3px, transparent 3px, transparent 5px)
@@ -282,6 +282,8 @@
     .line
       display: block
       background: $white
+      body#page-404 &
+        background: $black
       height: 2px
       border-radius: 1px
   .sp-menu-btn
