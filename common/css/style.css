@@ -802,7 +802,7 @@ footer {
 
 @media screen and (min-width: 1300px) {
   footer {
-    padding: 50px 0 0;
+    padding: 30px 0 0;
   }
 }
 
@@ -819,7 +819,7 @@ footer .sns-icons {
 
 @media screen and (min-width: 1300px) {
   footer .sns-icons {
-    margin-bottom: 43px;
+    margin-bottom: 23px;
   }
 }
 

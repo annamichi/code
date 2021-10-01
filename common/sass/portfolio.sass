@@ -33,8 +33,13 @@ header
 h2
   margin-bottom: 10px
   font-size: 200%
+  font-weight: 500
 
 #board
+  h2
+    background-image: linear-gradient(40deg, #C20143, #7B10BF, #FAB109, #D20245, #A3007F, #C20143, #7B10BF)
+    -webkit-text-fill-color: transparent
+    -webkit-background-clip: text
   padding-top: 40px
   padding-bottom: 40px
   .text-box
@@ -99,10 +104,16 @@ h2
   h2
     margin-bottom: 20px
   .img-box
+    @include mq(min, 1024)
+      height: calc((100vw - 130px)/2)
+    @include mq(min, 1260)
+      height: calc(1196px/2)
+    @include mq(min, 1518)
+      height: calc(1518px/2)
     img
       backdrop-filter: blur(3px)
     img + img
-      @include mq(max, 768)
+      @include mq(max, 1023)
         margin-top: 20px
   p
     color: $white
@@ -185,202 +196,7 @@ h2
   #board
     h2
       margin-bottom: 20px
-    .grid-8
-      position: relative
-      display: block
-      height: calc(1196px / 1.4)
-      > .item
-        position: absolute
-        overflow: hidden
-        img
-          // width: 100%
-          // height: auto
-        &:nth-child(1)
-          width: 45%
-          left: 0
-          picture
-            display: block
-            // margin-right: 15px
-            // margin-bottom: 15px
-        &:nth-child(2)
-          width: 30%
-          top: 30%
-          left: calc(45% + 25px)
-          picture
-            display: block
-            // margin-right: 15px
-        &:nth-child(3)
-          width: 20.97%
-          top: 30%
-          right: 0
-        &:nth-child(4)
-          width: calc(22.5% - 25px)
-          top: 50%
-          left: 0
-          picture
-            display: block
-            // margin-right: 15px
-            // margin-bottom: 15px
-        &:nth-child(5)
-          width: calc(22.5% - 25px)
-          bottom: 0
-          left: 0
-          picture
-            display: block
-            // margin-right: 15px
-        &:nth-child(6)
-          width: 22.5%
-          left: 22.5%
-          bottom: 0
-          picture
-            display: block
-            // margin-right: 15px
-        &:nth-child(7)
-          width: 30%
-          left: calc(45% + 25px)
-          bottom: 0
-          picture
-            display: block
-            // margin-top: 15px
-            // margin-right: 15px
-        &:nth-child(8)
-          bottom: 0
-          right: 0
-          width: 20.97%
-        &:nth-child(9)
-          width: 53%
-          right: 0
-          top: 16%
-          transform: translateY(-50%)
-
-
-    // .grid-8
-      // grid-template-columns: repeat(9, 1fr)
-      // grid-template-rows: repeat(10, auto)
-      // > .item
-      //   overflow: hidden
-      //   &:nth-child(1)
-      //     grid-column: 1/5
-      //     grid-row: 1/6
-      //   &:nth-child(2)
-      //     grid-column: 5/8
-      //     grid-row: 5/7
-      //   &:nth-child(3)
-      //     grid-column: 8/10
-      //     grid-row: 5/9
-      //   &:nth-child(4)
-      //     grid-column: 1/3
-      //     grid-row: 6/8
-      //   &:nth-child(5)
-      //     grid-column: 1/3
-      //     grid-row: 8/10
-      //   &:nth-child(6)
-      //     grid-column: 3/5
-      //     grid-row: 6/10
-      //   &:nth-child(7)
-      //     grid-column: 5/8
-      //     grid-row: 7/10
-      //   &:nth-child(8)
-      //     grid-column: 8/10
-      //     grid-row: 9/10
-      //   &:nth-child(9)
-      //     grid-column: 5/10
-      //     grid-row: 1/5
-      //     position: relative
-      //     .text-box
-      //       // margin: auto
-      //       width: 85%
-      //       position: absolute
-      //       top: 50%
-      //       left: 50%
-      //       transform: translate(-50%, -50%)
-      //       // transform: translateY(-50%)
-      //   img
-      //     height: 100%
-      //     width: auto
-
-  // #board
-  //   .grid-8ver2
-  //     margin-top: 100px
-  //     overflow: hidden
-  //     @include mq(min, 1260)
-  //       height: calc(1196px/1.3)
-  //     @include mq(min, 1518)
-  //       height: calc(1518px/1.3)
-  //     grid-template-columns: repeat(2, 1fr)
-  //     &, .pos-left, .pos-right
-  //       gap: 15px
-  //       @include mq(min, 1518)
-  //         gap: 25px
-  //     .pos-left, .pos-right
-  //       // display: grid
-  //     .pos-left
-  //       // grid-template-columns: repeat(2, 1fr)
-  //       // grid-template-rows: repeat(10, 180px)
-  //       > .item:nth-child(1)
-  //         // grid-row: span 5
-  //         // grid-column: span 2
-  //       > .item:nth-child(2)
-  //         width: calc(48.75% - 7.5px)
-  //         float: left
-  //         margin-top: 15px
-  //         @include mq(min, 1518)
-  //           width: calc(48.75% - 12.5px)
-  //           margin-top: 25px
-  //         // grid-row: 6/8
-  //       > .item:nth-child(3)
-  //         width: calc(51.25% - 7.5px)
-  //         float: right
-  //         margin-top: 15px
-  //         @include mq(min, 1518)
-  //           width: calc(51.25% - 12.5px)
-  //           margin-top: 25px
-  //         // grid-column: 1/2
-  //         // grid-row: 8/10
-  //       > .item:nth-child(4)
-  //         width: calc(48.75% - 7.5px)
-  //         float: left
-  //         margin-top: 15px
-  //         @include mq(min, 1518)
-  //           width: calc(48.75% - 12.5px)
-  //           margin-top: 25px
-
-  //     .pos-right
-  //       > .item:nth-child(1)
-  //         height: 40%
-  //         position: relative
-  //         .text-box
-  //           position: absolute
-  //           top: 50%
-  //           left: 10%
-  //           width: 80%
-  //           transform: translateY(-50%)
-  //       > .item:nth-child(2)
-  //         width: calc(59% - 7.5px)
-  //         float: left
-  //         @include mq(min, 1518)
-  //           width: calc(59% - 12.5px)
-  //       > .item:nth-child(3)
-  //         width: calc(41% - 7.5px)
-  //         float: right
-  //         @include mq(min, 1518)
-  //           width: calc(41% - 12.5px)
-  //       > .item:nth-child(4)
-  //         width: calc(59% - 7.5px)
-  //         float: left
-  //         margin-top: 15px
-  //         @include mq(min, 1518)
-  //           width: calc(59% - 12.5px)
-  //           margin-top: 25px
-  //       > .item:nth-child(5)
-  //         width: calc(41% - 7.5px)
-  //         float: right
-  //         margin-top: 15px
-  //         @include mq(min, 1518)
-  //           width: calc(41% - 12.5px)
-  //           margin-top: 25px
-
-  #board
+      width: 60%
     .board-box
       position: relative
       .text-box
@@ -390,7 +206,6 @@ h2
         top: 19%
         transform: translateY(-50%)
     .grid-8ver2
-      margin-top: 100px
       overflow: hidden
       @include mq(min, 1260)
         height: calc(1196px/1.3)
@@ -462,24 +277,11 @@ h2
             width: calc(41% - 12.5px)
             margin-top: 25px
         // > .item:nth-child(5)
-
-
-
-
-  #top
-    background: url(/work02/images/bg_white.svg) center / 45px auto, url(/work02/images/bg_works.png) no-repeat top center / cover
-  #thanks
-    background: url(/work02/images/bg_white.svg) center / 45px auto $black 
-  #wfs
-    background: url(/work02/images/bg_white.svg) center / 45px auto, url(/work02/images/bg_wf.png) no-repeat center / cover $bgMainC
-
-@include mq(min, 1280)
   #wfs
     .wrapper
       position: relative
     .img-box
       position: relative
-      height: 42vw
       width: 100%
       img
         position: absolute
@@ -496,7 +298,7 @@ h2
           transform: translateX(-50%)
     .pos-left, .pos-right
       position: absolute
-      top: calc(100% / 1.6 + 60px)
+      top: calc(100% / 1.6 + 30px)
       width: 25%
     .pos-left
       left: 0
@@ -504,6 +306,21 @@ h2
       margin-top: 0
       right: 0
 
+
+
+  #top
+    background: url(/work02/images/bg_white.svg) center / 45px auto, url(/work02/images/bg_works.png) no-repeat top center / cover
+  #thanks
+    background: url(/work02/images/bg_white.svg) center / 45px auto $black 
+  #wfs
+    background: url(/work02/images/bg_white.svg) center / 45px auto, url(/work02/images/bg_wf.png) no-repeat center / cover $bgMainC
+
+@include mq(min, 1260)
+  #top
+      background: url(/work02/images/bg_white.svg) center / 45px auto, url(/work02/images/bg_works.png) no-repeat top center / auto
+  #wfs
+    .pos-left, .pos-right
+      top: calc(100% / 1.6 + 60px)
   #misc
     .flex
       flex-direction: row-reverse
@@ -546,7 +363,13 @@ h2
     padding-bottom: 100px
     h2
       margin-bottom: 60px
-
+  
+  #wfs
+    padding-top: 80px
+    padding-bottom: 100px
+    h2
+      margin-bottom: 50px
+      
 @include mq(min, 1980)
   header
     left: calc((100vw - 1660px) / 2 )
