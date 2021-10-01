@@ -1,0 +1,48 @@
+// ANIMATIONS
+@media (prefers-reduced-motion: no-preference) 
+  .slideup
+    transition: all .3s
+    opacity: 0
+    transform: translateY(100px)
+  .slideup.active
+    // animation: slideUp .3s ease-in-out .3s
+    opacity: 1
+    transform: translateY(0)
+  
+  .delay
+    margin-top: 100px
+    transition: all .3s
+    & + &
+      margin-top: 200px
+  .delay.delayed
+    margin-top: 0
+
+// @keyframes slideUp 
+//   from
+//     transform: translateY(100px)
+//     // opacity: 0
+//   to
+//     transform: translateY(0)
+//     // opacity: 1
+
+@media (prefers-reduced-motion: no-preference) 
+  .slideupleft
+    transition: all .3s
+    opacity: 0
+    transform: translate(100px, 100px)
+  .slideupleft.active
+    opacity: 1
+    transform: translate(0, 0)
+
+// @keyframes slideUpLeft
+//   from
+//     transform: translate(100px, 100px)
+//     opacity: 0
+//   to
+//     transform: translate(0, 0)
+//     opacity: 1
+    
+// @keyframes blink
+//   50%
+//     border-color: transparent
+  

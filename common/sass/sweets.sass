@@ -1,0 +1,210 @@
+@charset "utf-8"
+
+@import _variables
+@import _mixins
+
+body
+  background: linear-gradient(#010101 55%, #132631)
+  main
+    font-size: 18px
+  p
+    color: $swTxtC
+
+
+    
+
+#top
+  background: url(/work04/images/bg_txt01.svg) no-repeat top 46px right 10%,  url(/work04/images/bg_txt02.svg) no-repeat bottom 0px left calc((100vw - 1518px) / 2),  url(/work04/images/purincup.png) no-repeat bottom 0px right 5% / 756px auto
+  @include mq(max,1600)
+    background: url(/work04/images/bg_txt01.svg) no-repeat top 46px right 10%, url(/work04/images/bg_txt02.svg) no-repeat bottom 0px left 5%, url(/work04/images/purincup.png) no-repeat bottom 0px right 5%/756px auto
+  padding-bottom: 445px
+  h1
+    width: calc(570px + (100vw - 1518px) / 2)
+    background: $swAccC
+    padding: 30px 35px 15px calc((100vw - 1518px) / 2)
+    margin-top: 130px
+    margin-bottom: 144px
+  .text-box
+    max-width: 588px
+    width: 50%
+  .img-box
+    max-width: 1064px
+    margin: 104px auto 0
+    display: flex
+    > * + *
+      margin-left: 180px
+      transform: translateY(-264px)
+    p
+      text-align: center
+      text-transform: uppercase
+      font-weight: 600
+      letter-spacing: 2px
+      font-size: 77%
+      margin-top: 40px
+
+
+#task
+  padding-top: 120px
+  padding-bottom: 180px
+  background: url(/work04/images/macarons.png) no-repeat top 95px left 10% / 40vw auto
+  .text-box
+    width: 40%
+  h2, .text-box
+    margin-left: 58%
+  h2
+    margin-bottom: 60px
+
+#board
+  background: url(/work04/images/bg_txt03.svg) no-repeat bottom 0px left calc((100vw - 1518px) / 2
+  padding-bottom: 180px
+  .grid-7
+    gap: 17px
+    grid-template-columns: repeat(7, 1fr)
+    margin-top: 170px
+    .item:nth-child(1),
+    .item:nth-child(3),
+    .item:nth-child(7)
+      transform: translateY(-86px)
+    .item:nth-child(4)
+      transform: translateY(-170px)
+    .item:nth-child(5)
+      transform: translateY(-125px)
+  .text-box
+    width: 27%
+    margin-left: 68%
+    margin-top: 18px
+  h2
+    margin-top: 190px
+
+#misc
+  padding-bottom: 150px
+  padding-top: 150px
+  h2
+    margin-bottom: 40px
+  .wrapper
+    > .grid-2
+      grid-template-columns: repeat(2, 41%)
+      justify-content: space-between
+      > *:nth-child(3)
+        grid-row: 1/3
+        grid-column: 2/3
+  .grid-5
+    grid-template-columns: repeat(5, 1fr)
+    width: 428px
+    margin-bottom: 50px
+    grid-row-gap: 40px
+    > li
+      width: 60px
+      height: 60px
+  .colors
+    > li
+      border-radius: 50%
+      border: 1px solid $white
+      font-size: 0
+      text-indent: -9999px
+      overflow: hidden
+    > li:nth-child(1)
+      background: #091217
+    > li:nth-child(2)
+      background: #E9D6D6
+    > li:nth-child(3)
+      background: #0D3040
+    > li:nth-child(4)
+      background: #F9B64C
+    > li:nth-child(5)
+      background: linear-gradient(#010101, #132631)
+    & + p:last-child
+      margin-bottom: 110px
+  h3
+    margin-top: 40px
+    img
+      width: auto
+    + p
+      margin-top: 5px
+      margin-bottom: 40px
+
+
+footer
+  background: #132631
+
+//SP
+@include mq(max, 768)
+  h2
+    font-size: 200%
+  body
+    font-size: 15px
+  #top
+    background: none
+    padding-bottom: 30px
+    h1
+      width: 180px
+      padding: 15px 15px 10px 30px
+      margin-top: 50px
+      margin-bottom: 40px
+    .img-box
+      width: 80%
+      margin-top: 50px
+      flex-direction: column
+      > * + *
+        margin-left: 0
+        transform: translateY(0)
+        margin-top: 40px
+      p
+        margin-top: 10px
+  #task
+    padding-top: 40px
+    padding-bottom: 70vw
+    background: url(/work04/images/macarons.png) no-repeat bottom 0 center /90% auto
+    h2, .text-box
+      margin-left: 0
+    h2
+      margin-bottom: 30px
+
+
+  .text-box
+    width: auto!important
+
+  #board
+    padding-bottom: 40px
+    background: none
+    h2
+      margin-top: 40px
+    .text-box
+      margin-left: 0
+    .grid-7
+      margin-top: 30px
+      grid-template-columns: repeat(3, 1fr)
+      grid-template-rows: repeat(3, calc((100vw - 30px - 24px) / 3))
+      gap: 12px
+      .item
+        transform: translateY(0)!important
+        overflow: hidden
+      .item:nth-child(1)
+        grid-column: 1/3
+      .item:nth-child(7)
+        grid-column: 2/4
+
+  #misc
+    padding-bottom: 50px
+    padding-top: 40px
+    .wrapper
+      > .grid-2
+        grid-template-columns: repeat(1, 1fr)
+        gap: 60px
+        > *:nth-child(3)
+          grid-row: auto
+          grid-column: auto
+    .grid-5
+      width: auto
+      max-width: 300px
+      margin-bottom: 20px
+      > li
+        width: 40px
+        height: 40px
+      + p:last-child
+        margin-bottom: 0
+    h2
+      margin-bottom: 20px
+    h3
+      img
+        max-width: 100%

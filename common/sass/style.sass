@@ -1,0 +1,600 @@
+@charset "utf-8"
+
+@import _variables
+@import _mixins
+
+*, *::before, *::after
+  box-sizing: border-box
+
+body
+  position: relative
+  font-family: $txtMainF
+  // background-color: #fff
+  color: $black
+    
+html, body
+  overflow-x: hidden
+
+a
+  color: $accMainC
+  text-decoration: none
+  &.underline
+    padding-bottom: 4px
+    border-bottom: 1px solid
+
+img
+  width: 100%
+  height: auto
+  vertical-align: middle
+
+.text-right
+  text-align: right
+
+.mt0
+  margin-top: 0!important
+.mb0
+  margin-bottom: 0!important
+.mbs
+  margin-bottom: 10px!important
+
+canvas
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 1
+  background: #FBB009
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16vw), 0 100%)
+
+header
+  width: calc(100% - 60px)
+  margin: auto
+  display: flex
+  justify-content: space-between
+  align-items: center
+  position: relative
+  z-index: 3
+  &#top-page::after
+    background: url(/common/images/triangle_yel.svg) no-repeat left 11px top, url(/common/images/triangle_purp.svg) no-repeat left top, url(/common/images/triangle_purp.svg) no-repeat right bottom
+    display: block
+    content: ""
+    position: absolute
+    top: 117px
+    right: 27px
+    z-index: 20
+    width: 67.37px
+    height: 30.5px
+  .logo
+    margin-top: 15px
+    margin-bottom: 15px
+  .nav-menu
+    display: flex
+    justify-content: space-between
+    width: 450px
+    a
+      color: $white
+      text-transform: lowercase
+      letter-spacing: 2px
+      transition: color .4s ease-out
+      &:hover
+        color: mix(white, $accSecC, 20%)
+
+
+.wrapper
+  width: calc(100% - 60px)
+  margin: auto
+  position: relative
+
+main
+  .top
+    margin-top: 340px
+    padding-top: 100px
+    position: relative
+    z-index: 2
+    &::after
+      background: url(/common/images/triangle_yel.svg) no-repeat left 11px top, url(/common/images/triangle_purp.svg) no-repeat left top, url(/common/images/triangle_purp.svg) no-repeat right bottom
+      display: block
+      content: ""
+      position: absolute
+      bottom: -258px
+      left: -45px
+      z-index: 20
+      width: 65.37px
+      height: 37.5px
+    .skills
+      width: 264px
+      display: flex
+      flex-direction: column
+      h2
+        font-weight: 900
+        font-size: 130%
+        line-height: 180%
+        letter-spacing: 0.05em
+        margin-top: 60px
+      .skill-icons
+        display: grid
+        gap: 20px 13px
+        grid-template-columns: repeat(5, 1fr)
+        margin-top: 15px
+        margin-bottom: 15px
+        align-items: center
+        justify-items: center
+        // li
+          // display: flex
+          // justify-content: center
+          // align-items: center
+          // img
+            // max-width: 44px
+            // max-height: 44px
+        + a
+          text-align: right
+          align-self: flex-end
+      &::after
+        background: url(/common/images/triangle_yel.svg) no-repeat left 11px top, url(/common/images/triangle_purp.svg) no-repeat left top, url(/common/images/triangle_purp.svg) no-repeat right bottom
+        display: block
+        content: ""
+        position: absolute
+        bottom: -120px
+        right: -27px
+        z-index: 20
+        width: 78.37px
+        height: 49.5px
+        transform: rotate(180deg)
+  .main-title, .over-title, .back-title
+    position: absolute
+    font-family: $txtMainTitle
+    font-size: 490%
+    font-weight: 900
+    z-index: 10
+    top: 0px
+  .main-title
+    mix-blend-mode: overlay
+  .over-title
+    opacity: .3
+  .back-title
+    z-index: 0
+  .intro
+    font-size: 130%
+    line-height: 166%
+    margin-top: 10px
+  .main-hero_img
+    width: 100%
+    position: absolute
+    left: 600px
+    top: -240px
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.05), 0px 40px 50px -50px rgba(0, 0, 0, 0.25), 0px 20px 50px -20px rgba(0, 0, 0, 0.2), inset 0 -1px 1px 1px rgba(0, 0, 0, 0.6)
+    user-select: none
+    img
+      user-select: none
+      position: relative
+      z-index: 5
+    &::after
+      content: ""
+      background: url(/images/bg_frame_hero.svg) no-repeat
+      background-size: cover
+      display: block
+      position: absolute
+      top: -34px
+      left: -29px
+      z-index: 3     
+      width: 100%
+      height: 100%
+      opacity: .7
+
+  .content-title
+    font-weight: 800
+    font-size: 300%
+    line-height: 1.2
+    text-align: center
+    margin-bottom: 140px
+
+  #works
+    background: url(/images/works_bg.png) no-repeat center top / cover
+    margin-top: 120px
+    padding-bottom: 230px
+    .content-title
+      padding-top: 400px
+      color: $white
+    .works-grid, ul.back
+      display: grid
+      gap: 4vw
+      // grid-template-columns: repeat(3, 1fr)
+      // grid-template-rows: repeat(3, 1fr)
+      // grid-template-rows: max-content
+      grid-template-columns: repeat(3, 364px)
+      grid-template-rows: repeat(3, 364px)
+      li:first-child
+        grid-column: 1 / 3
+        grid-row: 1 / 3
+      li:last-child
+        grid-row: 3
+        grid-column: 1 / 4
+      li
+        position: relative
+        // &::after
+        //   content: ""
+        //   display: block
+        //   position: absolute
+        //   z-index: 6     
+        //   opacity: .6
+        //   transform: rotate(-2deg)
+        //   width: 90%
+        //   height: 90%
+        //   @include mq(min, 1400)
+        //     width: calc(100% + 4px)
+        //     height: 100%
+        // &:first-child::after
+        //   background: url(/images/bg_frame01.svg) no-repeat
+        //   top: -3%
+        //   left: -1%
+        //   @include mq(min, 1400)
+        //     top: -0.5%
+        //     left: -0.5%
+        //   background-size: cover
+        // &:nth-child(2)::after, &:nth-child(3)::after
+        //   background: url(/images/bg_frame02.svg) no-repeat
+        //   top: -0.5%
+        //   left: -0.5%
+        //   background-size: cover
+        //   @include mq(min, 1600)
+        //     @include size(103%)
+        // &:last-child::after
+        //   background: url(/images/bg_frame03.svg) no-repeat
+        //   top: 1%
+        //   left: -1%
+        //   background-size: cover
+        &:nth-child(1) a
+          background: url(/images/work01.png) no-repeat center / cover
+        &:nth-child(2) a
+          background: url(/images/work02.png) no-repeat center / cover
+        &:nth-child(3) a
+          background: url(/images/work03.png) no-repeat center / cover
+        &:nth-child(4) a
+          background: url(/images/work04.png) no-repeat center / cover
+    a
+      width: 100%
+      height: 100%
+      display: block
+      position: relative
+      z-index: 7
+    // img
+    //   height: auto
+    //   width: 100%
+      // opacity: 0
+    a + svg
+      width: 100%
+      height: 100%
+      position: absolute
+      top: -10px
+      left: 0
+      transition: transform .2s ease-out
+      transform: rotate(0deg) translate(0, 0)
+    a.active + svg
+      transform: rotate(177deg) translate(0, 7px)
+    li:last-child a + svg
+      top: 10px
+    // .container
+    //   position: relative
+    // ul.back
+    //   position: absolute
+    //   top: 0
+    //   left: 0
+  #about
+    padding-bottom: 200px
+    .wrapper
+      &::after
+        background: url(/common/images/triangle_yel.svg) no-repeat left 11px top, url(/common/images/triangle_purp.svg) no-repeat left top, url(/common/images/triangle_purp.svg) no-repeat right bottom
+        display: block
+        content: ""
+        position: absolute
+        bottom: -30px
+        right: 333px
+        z-index: 20
+        width: 65.37px
+        height: 37.5px
+    .content-title
+      margin-top: 190px
+    .about_box
+      display: flex
+      justify-content: space-between
+      padding-bottom: 33.33%
+      position: relative
+      > li
+        width: 33.33%
+        position: relative
+        .blackscreen
+          transition: all .2s ease-in
+          background-color: $black
+          top: 0
+          left: 0
+          bottom: 0
+          right: 0
+          position: absolute
+          z-index: 10
+          padding-bottom: 100%
+          opacity: 0
+        ul
+          position: relative
+          li
+            position: absolute
+            top: 0
+            left: 0
+            bottom: 0
+            right: 0
+            background: $black
+            // overflow: hidden
+            // width: 100%
+            // height: 100%
+            // img
+            //   width: 100%
+            //   height: auto
+        .caption
+          color: $white
+          font-family: Sora
+          font-weight: 800
+          font-size: 350%
+          line-height: 1.25
+          z-index: 20
+          position: absolute
+          top: 0
+          left: 5%
+          padding-top: 72%
+          .smalltext
+            font-size: 25%
+            font-family: Lato
+            font-weight: normal
+            display: block
+            text-align: right
+            transform: translateX(70px)
+            margin-top: -5px
+      &::after
+        background: url(/common/images/triangle_purp.svg) no-repeat left 11px top, url(/common/images/triangle_yel.svg) no-repeat left top, url(/common/images/triangle_yel.svg) no-repeat right bottom
+        display: block
+        content: ""
+        position: absolute
+        bottom: -85px
+        left: 273px
+        z-index: 20
+        width: 65.37px
+        height: 37.5px
+
+  #experience
+    background: linear-gradient(to right, $bgMainC 50%, $black 50%)
+    padding-bottom: 260px
+    .content-title
+      padding-top: 190px
+      position: relative
+      transform: translateX(-10px)
+      .over
+        color: $accSecC
+        clip-path: polygon(0% 0%, calc(50% + 10px) 0%, calc(50% + 10px) 100%, 0% 100%)
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+        z-index: 2
+      &::after
+        content: "My Experience"
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+        color: $accMainC
+    .exp-grid
+      display: grid
+      gap: 60px 300px 
+      grid-template-columns: repeat(2, 1fr)
+      & > *:nth-child(n + 3)
+        border-left: 1px dashed
+        padding-left: 20px
+        position: relative
+        &::before
+          display: block
+          content: ""
+          position: absolute
+          top: 0
+          left: -60px
+          z-index: 20
+          width: 40px
+          height: 25px
+        &.edu::before
+          background: url(/common/images/triangle_purp.svg) no-repeat right bottom / 29px auto, url(/common/images/triangle_yel.svg) no-repeat left top / 29px auto
+        &.work::before
+          background: url(/common/images/triangle_yel.svg) no-repeat right bottom / 29px auto, url(/common/images/triangle_purp.svg) no-repeat left top / 29px auto
+      & > *:nth-child(5),
+      & > *:nth-child(4)
+        align-self: start
+      .edu
+        grid-column: 1/2
+        border-color: $accSecC
+        h2, h3, .subtitle, a
+          color: $accSecC
+      .work
+        grid-column: 2/3
+        border-color: lighten($accMainC, 10%)
+        h2, h3, .subtitle, a
+          color: $accMainC
+      h2
+        font-weight: 800
+        font-size: 280%
+        line-height: 1.2
+        text-transform: uppercase
+      .date
+        font-style: italic
+        font-size: 80%
+        line-height: 1.23
+      h3
+        font-weight: 800
+        font-size: 220%
+        line-height: 1.2
+        margin-top: 4px
+        &:not(.narrow)
+          letter-spacing: 0.1em
+        .narrow
+          letter-spacing: 0.07em
+        text-transform: uppercase
+      .subtitle
+        font-size: 115%
+        line-height: 1.2
+        letter-spacing: 0.1em
+        margin-bottom: 27px
+      h4
+        font-weight: bold
+        letter-spacing: 0.05em
+      .details-text
+        font-weight: 300
+        &:not(:last-child)
+          margin-bottom: 20px
+      h4, .details-text
+        line-height: 1.6
+      .date, .subtitle, h4, .details-text
+        color: $white
+    a.white
+      color: $white
+      position: relative
+      &::after
+        background: url(/common/images/triangle_yel.svg) no-repeat right bottom, url(/common/images/triangle_purp.svg) no-repeat left top
+        display: block
+        content: ""
+        position: absolute
+        bottom: -54px
+        right: -55px
+        z-index: 20
+        width: 52.37px
+        height: 30.5px
+        transform: rotate(180deg)
+  #contact
+    padding-bottom: 200px
+    .wrapper
+      &::after
+        background: url(/common/images/triangle_yel.svg) no-repeat left 11px top, url(/common/images/triangle_purp.svg) no-repeat left top, url(/common/images/triangle_purp.svg) no-repeat right bottom
+        display: block
+        content: ""
+        position: absolute
+        bottom: -150px
+        left: -60px
+        z-index: 20
+        width: 78.37px
+        height: 49.5px
+        transform: rotate(180deg)
+    .content-title
+      margin-top: 190px
+      position: relative
+      &::after
+        background: url(/common/images/triangle_yel.svg) no-repeat right bottom, url(/common/images/triangle_purp.svg) no-repeat left top
+        display: block
+        content: ""
+        position: absolute
+        top: -120px
+        right: -55px
+        z-index: 20
+        width: 52.37px
+        height: 30.5px
+    form
+      width: 710px
+      margin: auto
+      display: grid
+      grid-template-columns: 190px auto
+      gap: 30px
+      .field
+        position: relative
+        label
+          color: #aaa
+          position: absolute
+          top: 16px
+          left: 16px
+        label, input, textarea
+          transition: all .4s
+          // touch-action: manipulation
+        input, textarea
+          width: 100%
+          background: $black
+          border-radius: 3px
+          color: $white
+          padding: 12px 16px
+          appearance: none
+          font-family: $txtMainF
+          font-size: 88%
+          line-height: 1.7
+          // box-shadow: none !important
+          // outline: none
+          border: none
+          cursor: text
+          &:-webkit-autofill,
+          &:-webkit-autofill:hover, 
+          &:-webkit-autofill:focus
+            -webkit-text-fill-color: $white
+            -webkit-box-shadow: 0 0 0px 1000px mix($accMainC, $bgMainC,25%) inset
+            transition: background-color 5000s ease-in-out 0s
+          &::placeholder
+            opacity: 0
+            transition: inherit
+          &:focus-within + label,
+          &:not(:placeholder-shown) + label
+            cursor: text
+            top: -18px;
+            left: -6px;
+            transform: scale(0.7)
+            font-weight: bold
+            color: #555
+        textarea:focus-within + label,
+        textarea:not(:placeholder-shown) + label
+          left: -9px
+      & > *:nth-child(3)
+        grid-column: 1/3 
+      & > *:last-child
+        justify-self: end
+        grid-column: 2/3
+      .field input
+        height: 50px
+      .field textarea
+        height: 240px
+        resize: vertical
+      .btn
+        appearance: none
+        border: none
+        background: url(/images/btn_bg.svg) no-repeat right bottom $accMainC
+        color: $white
+        padding: 10px 48px
+        box-shadow: 0px 20px 50px -20px rgba(62, 0, 44, 0.35), 0px 5px 20px -10px rgba(193, 1, 93, 0.4)
+        border-radius: 6px
+        font-weight: 900
+        font-size: 115%
+        line-height: 1.7
+        letter-spacing: 0.05em
+        transition: all .2s ease-in
+        &:hover
+          background-color: lighten($accMainC, 7%)
+        &:active
+          transform: translateY(4px)
+
+footer
+  background-color: $bgMainC
+  padding: 20px 0 0
+  @include mq(min, 1300)
+    padding: 50px 0 0
+  .sns-icons
+    display: flex
+    justify-content: space-between
+    width: 290px
+    margin: 10px auto 16px
+    @include mq(min, 1300)
+      margin-bottom: 43px
+    li
+      a
+        svg
+          width: 20px
+          height: auto
+          transition: fill .4s ease-out
+          fill: #FEF9F3
+        &:hover svg
+          fill: mix(white, $accSecC, 20%)
+  .copy
+    color: $white
+    text-align: center
+    font-size: 80%
+    // background: $black
+    width: 100%
+    padding: 10px
+    line-height: 1.2
+
+
+@import _animations
+@import _sp

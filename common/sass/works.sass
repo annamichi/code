@@ -1,0 +1,67 @@
+@charset "utf-8"
+
+@import _variables
+@import _mixins
+
+body
+  p
+    line-height: 1.75
+    font-size: 100%
+  p + p
+    margin-top: 14px
+
+[class^="grid-"]
+  display: grid
+
+.flex
+  display: flex
+
+h2
+  color: $swAccC
+  font-size: 310%
+  line-height: 150%
+  letter-spacing: 0.2em
+  text-transform: uppercase
+  @include mq(max,1300)
+    font-size: 4vw
+
+
+#thanks
+  background: #010101
+  padding-top: 60px
+  padding-bottom: 60px
+  @include mq(min, 1300)
+    padding-top: 150px
+    padding-bottom: 150px
+  h3
+    color: $swAccC
+    font-size: 200%
+    line-height: 150%
+    letter-spacing: 0.2em
+    text-transform: uppercase
+    text-align: center
+    max-width: 300px
+    margin: auto
+
+@include mq(min, 1600)
+  .wrapper
+    width: 1518px
+    
+//SP
+@include mq(max, 768)
+  #thanks
+    h3
+      font-size: 130%
+
+ul.triangle-mark
+  li
+    margin-left: 30px
+    &::before
+      content: ""
+      background: url(/common/images/triangle_yel.svg) no-repeat right bottom / 14.45px auto, url(/common/images/triangle_purp.svg) no-repeat left top / 14.45px auto
+      width: 19.68px
+      height: 12.79px
+      display: inline-block
+      margin-left: -30px
+      margin-right: 10px
+      vertical-align: middle

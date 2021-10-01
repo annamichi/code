@@ -1,0 +1,24 @@
+@mixin size($a)
+  width: $a
+  height: $a
+
+// @mixin mq($s, $w)
+//   @media screen and (#{$s}: #{$w})
+
+@mixin mq($s, $w)
+  @if $s == "min"
+    @media screen and (min-width: $w+"px")
+      @content
+  @if $s == "max"
+    @media screen and (max-width: $w+"px")
+      @content
+  
+
+@mixin mq2($s, $w, $s2, $w2)
+  @if $s == "min" && $s2 == "max"
+    @media screen and (min-width: $w+"px") and (max-width: $w2+"px")
+      @content
+  @if $s == "max" && $s2 == "min"
+    @media screen and (min-width: $w2+"px") and (max-width: $w+"px")
+      @content
+  

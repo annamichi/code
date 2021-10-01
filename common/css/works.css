@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Sora:wght@800&display=swap");
+body p {
+  line-height: 1.75;
+  font-size: 100%;
+}
+
+body p + p {
+  margin-top: 14px;
+}
+
+[class^="grid-"] {
+  display: -ms-grid;
+  display: grid;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+h2 {
+  color: #F9B64C;
+  font-size: 310%;
+  line-height: 150%;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 1300px) {
+  h2 {
+    font-size: 4vw;
+  }
+}
+
+#thanks {
+  background: #010101;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+@media screen and (min-width: 1300px) {
+  #thanks {
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+}
+
+#thanks h3 {
+  color: #F9B64C;
+  font-size: 200%;
+  line-height: 150%;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  max-width: 300px;
+  margin: auto;
+}
+
+@media screen and (min-width: 1600px) {
+  .wrapper {
+    width: 1518px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #thanks h3 {
+    font-size: 130%;
+  }
+}
+
+ul.triangle-mark li {
+  margin-left: 30px;
+}
+
+ul.triangle-mark li::before {
+  content: "";
+  background: url(/common/images/triangle_yel.svg) no-repeat right bottom/14.45px auto, url(/common/images/triangle_purp.svg) no-repeat left top/14.45px auto;
+  width: 19.68px;
+  height: 12.79px;
+  display: inline-block;
+  margin-left: -30px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
