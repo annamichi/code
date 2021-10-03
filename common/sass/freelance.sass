@@ -1,0 +1,381 @@
+@charset "utf-8"
+
+@import _variables
+@import _mixins
+
+a
+  color: $frAccC-2
+
+header
+  position: absolute
+  left: 15px
+
+body::after
+  content: ""
+  background: url(/work03/images/bg_sp.jpg) no-repeat top center / cover
+  position: fixed
+  top: 0
+  bottom: 0
+  right: 0
+  left: 0
+  z-index: -1
+
+main
+  background: #fff
+  margin: 54px 30px 30px
+
+
+#top
+  padding-top: 15px
+  padding-bottom: 30px
+  h1
+    font-size: 120%
+    text-transform: uppercase
+    margin-bottom: 80px
+    margin-top: 20px
+    .font-big
+      display: block
+      font-size: 180%
+      font-weight: 900
+      color: $frAccC-2
+      letter-spacing: 0.1em
+      margin-bottom: 2px
+    .font-small
+      font-size: 80%
+      padding: 2px 5px
+      background: linear-gradient(to right, $frAccC-2, $frAccC-2-light)
+      color: #fff
+      font-weight: 500
+      letter-spacing: 0.3em
+  .flex
+    flex-direction: column-reverse
+  .img-box
+    padding-bottom: 30px
+    position: relative
+    > *:first-child
+      position: absolute
+      bottom: 22px
+      right: 30px
+      z-index: 10
+      width: 18%
+    > *:last-child
+      position: relative
+      z-index: 9
+    &::after
+      content: ""
+      background: url(/work03/images/grad1_sp.svg) no-repeat bottom left /contain
+      width: calc(100% + 30px)
+      height: 300px
+      display: block
+      position: absolute
+      bottom: 0
+      left: -15px
+      z-index: 2
+  .text-box
+
+h2
+  color: $frAccC
+  margin-bottom: 10px
+  font-weight: 500
+  &::before
+    content: url(/work03/images/mark01.svg)
+    display: inline-block
+    width: 22px
+    height: 22px
+    margin-right: 10px
+
+#points
+  width: 100vw
+  transform: translateX(-30px)
+  padding: 30px 30px 40px
+  background: url(/work03/images/points_bk_sp.jpg) no-repeat bottom right / cover, $frAccC-2
+  box-shadow: 0 2px 2px 0 rgba(mix(#000, $frAccC-2, 20%), .8), 0 4px 14px 0 rgba(mix(#000, $frAccC-2, 30%), .8), 0 -4px 10px 0 rgba(mix(#fff, $frAccC-2, 20%), .3), 0 -1px 2px 0 rgba(mix(#000, $frAccC-2, 20%), .2)
+  color: $white
+  line-height: 1.75
+  h2
+    color: $frAccC-light
+    &::before
+      content: url(/work03/images/mark02.svg)
+  .flex
+    flex-wrap: wrap
+  ul.mark
+    margin-bottom: 20px  
+    li
+      margin-left: 26px
+      position: relative
+      &::before
+        content: url(/work03/images/mark03.svg)
+        position: absolute
+        width: 12px
+        height: 12px
+        font-weight: 500
+        left: -26px
+  .img-box
+    padding-top: 10px
+    // display: flex
+    // flex-direction: column
+    // justify-content: space-between
+    position: relative
+    width: 100%
+    height: 310px
+    margin: auto
+    // max-height: 300px
+    img
+      margin-top: 20px
+      position: absolute
+      width: 300px
+      &:nth-child(1)
+        // align-self: flex-start
+        transform: translateX(-36px)
+        // top: 0
+        // left: 0
+      &:nth-child(2)
+        transform: translate(52px, 60px)
+        // top: 30%
+        // right: 0
+      &:nth-child(3)
+        transform: translate(-36px, 120px)
+        // top: 60%
+        // left: 0      
+    .img-title
+      text-transform: uppercase
+      font-weight: bold
+      letter-spacing: 0.1em
+      // box-shadow: 0px 50px 100px -20px rgba(50, 50, 93, 0.25), 0px 30px 60px -20px rgba(0, 0, 0, 0.3)
+
+#live
+  padding-top: 40px
+  padding-bottom: 20px
+  background: url(/work03/images/grad2_sp.svg) no-repeat bottom right / contain
+  h2
+    text-align: center
+    margin-bottom: 20px
+  .img-box
+    border: 1px solid #ddd
+    border-radius: 10px
+    overflow: hidden
+  .btn
+    padding: 12px 16px
+    margin: 10px auto
+    width: fit-content
+    box-shadow: 0 2px 4px rgba(#aaa, .8)
+    @include mq(min, 1024)
+      padding: 15px 20px
+    &.btn-white
+      background: #fff
+      text-transform: uppercase
+      font-weight: bold
+      font-size: 70%
+      letter-spacing: 0.1em
+
+#thanks
+  h3
+    color: $frAccC-light
+
+footer
+  background: #0A0046
+
+@include mq2(min, 1024, max, 1489)
+  header
+    // left: calc((100vw - 1196px) / 2 )
+    left: 75px
+    width: calc(100% - 130px)
+
+@include mq(min, 1024)
+  #top
+    // padding-top: 176px
+    padding-top: 110px
+    .img-box
+      width: 48%
+      > *:first-child
+        width: 44%
+    .flex
+      flex-direction: row-reverse
+      justify-content: space-between
+    .text-box
+      width: 48%
+
+  #board
+    h2
+      margin-bottom: 20px
+      width: 60%
+    .board-box
+      position: relative
+      .text-box
+        position: absolute
+        width: 40%
+        right: 5%
+        top: 19%
+        transform: translateY(-50%)
+    .grid-8ver2
+      overflow: hidden
+      @include mq(min, 1260)
+        height: calc(1196px/1.3)
+      @include mq(min, 1518)
+        height: calc(1518px/1.3)
+      grid-template-columns: repeat(2, 1fr)
+      &, .pos-left, .pos-right
+        gap: 15px
+        @include mq(min, 1518)
+          gap: 25px
+      .pos-left, .pos-right
+        display: block
+      .pos-left
+        // grid-template-columns: repeat(2, 1fr)
+        // grid-template-rows: repeat(10, 180px)
+        > .item:nth-child(1)
+          // grid-row: span 5
+          // grid-column: auto
+        > .item:nth-child(2)
+          width: calc(48.75% - 7.5px)
+          float: left
+          margin-top: 15px
+          @include mq(min, 1518)
+            width: calc(48.75% - 12.5px)
+            margin-top: 25px
+          // grid-row: 6/8
+        > .item:nth-child(3)
+          width: calc(51.25% - 7.5px)
+          float: right
+          margin-top: 15px
+          @include mq(min, 1518)
+            width: calc(51.25% - 12.5px)
+            margin-top: 25px
+          // grid-column: 1/2
+          // grid-row: 8/10
+        > .item:nth-child(4)
+          width: calc(48.75% - 7.5px)
+          float: left
+          margin-top: 15px
+          @include mq(min, 1518)
+            width: calc(48.75% - 12.5px)
+            margin-top: 25px
+
+      .pos-right
+        > .item:nth-child(1)
+          margin-top: 63%
+          width: calc(59% - 7.5px)
+          float: left
+          @include mq(min, 1518)
+            width: calc(59% - 12.5px)
+        > .item:nth-child(2)
+          margin-top: 63%
+          width: calc(41% - 7.5px)
+          float: right
+          @include mq(min, 1518)
+            width: calc(41% - 12.5px)
+        > .item:nth-child(3)
+          width: calc(59% - 7.5px)
+          float: left
+          margin-top: 15px
+          @include mq(min, 1518)
+            width: calc(59% - 12.5px)
+            margin-top: 25px
+        > .item:nth-child(4)
+          width: calc(41% - 7.5px)
+          float: right
+          margin-top: 15px
+          @include mq(min, 1518)
+            width: calc(41% - 12.5px)
+            margin-top: 25px
+        // > .item:nth-child(5)
+  #wfs
+    .wrapper
+      position: relative
+    .img-box
+      position: relative
+      width: 100%
+      img
+        position: absolute
+        width: 45%
+        &:nth-child(1)
+          top: 0
+          left: 0
+        &:nth-child(2)
+          top: 0
+          right: 0
+        &:nth-child(3)
+          bottom: 0
+          left: 50%
+          transform: translateX(-50%)
+    .pos-left, .pos-right
+      position: absolute
+      top: calc(100% / 1.6 + 30px)
+      width: 25%
+    .pos-left
+      left: 0
+    .pos-right
+      margin-top: 0
+      right: 0
+
+
+
+  #top
+    background: url(/work02/images/bg_white.svg) center / 45px auto, url(/work02/images/bg_works.png) no-repeat top center / cover
+  #thanks
+    background: url(/work02/images/bg_white.svg) center / 45px auto $black 
+  #wfs
+    background: url(/work02/images/bg_white.svg) center / 45px auto, url(/work02/images/bg_wf.png) no-repeat center / cover $bgMainC
+
+@include mq(min, 1260)
+  #top
+      background: url(/work02/images/bg_white.svg) center / 45px auto, url(/work02/images/bg_works.png) no-repeat top center / auto
+  #wfs
+    .pos-left, .pos-right
+      top: calc(100% / 1.6 + 60px)
+  #misc
+    .flex
+      flex-direction: row-reverse
+      justify-content: space-between
+      > *
+        width: 48%
+        &:last-child
+          margin-top: 120px
+    .colors
+      width: 80%
+      margin-left: -20px
+
+@include mq(min, 1490)
+  body
+    font-size: 18px
+  header
+    left: calc((100vw - 1440px) / 2 )
+
+  #top
+    padding-top: 150px
+    padding-bottom: 100px
+    h1
+      width: 70%
+      margin-bottom: 80px
+    h2
+      margin-top: 30px
+    p
+      font-size: 110%
+    p + p
+      margin-top: 16px
+    .flex
+      > *
+        width: 46%
+
+  h2
+    font-size: 375%
+
+  #board
+    padding-top: 100px
+    padding-bottom: 100px
+    h2
+      margin-bottom: 60px
+  
+  #wfs
+    padding-top: 80px
+    padding-bottom: 100px
+    h2
+      margin-bottom: 50px
+      
+@include mq(min, 1980)
+  header
+    left: calc((100vw - 1660px) / 2 )
+
+  #board
+    .grid-8
+      height: calc(1660px / 1.4)

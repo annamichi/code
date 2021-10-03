@@ -1017,7 +1017,13 @@ body#page-404 .btn-main a:hover {
   }
 }
 
-@media screen and (max-width: 1660px) {
+@media screen and (min-width: 1024px) and (max-width: 1660px) {
+  body {
+    font-size: 90%;
+  }
+}
+
+@media screen and (min-width: 1660px) and (max-width: 1024px) {
   body {
     font-size: 90%;
   }
@@ -1311,6 +1317,9 @@ body#page-404 .btn-main a:hover {
   }
   footer .sns-icons {
     margin-bottom: 13px;
+  }
+  footer .sns-icons li a svg {
+    width: 16px;
   }
   footer .copy {
     padding-bottom: 4px;

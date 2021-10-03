@@ -22,6 +22,12 @@ h2 {
   }
 }
 
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 200%;
+  }
+}
+
 #thanks {
   background: #010101;
   padding-top: 60px;
