@@ -75,7 +75,36 @@ header
   .nav-menu
     display: flex
     justify-content: space-between
-    width: 450px
+    li
+      // overflow: hidden
+      // width: 157px
+      // text-align: right
+      @include mq(min, 1260)
+        position: relative
+        &:hover
+          .sub-menu, .sub-menu:hover
+            li
+              display: block
+              @for $i from 1 through 4
+                &:nth-child(#{$i})
+                  animation: subMenuSlideIn .3s ease-in forwards 150ms*($i - 1)
+    > li + li
+      margin-left: 60px
+    .sub-menu
+      font-size: 80%
+      @include mq(min, 1260)
+        position: absolute
+        // transform: translateX(300px)
+        transition: transform .8s ease-in
+        top: 16px
+        left: 0
+        width: 200px
+        li
+          display: none
+          opacity: 0
+          margin-top: 10px
+        
+      // z-index: 30
     a
       color: $white
       body#page-404 &
@@ -87,6 +116,35 @@ header
         color: mix(white, $accSecC, 20%)
         body#page-404 &
           color: $accSecC
+    .sub-menu a
+      transition: background-color .4s ease-out
+      &::before
+        content: ""
+        background-color: $white
+        body#page-404 &
+          background-color: $black
+        width: 5px
+        height: 5px
+        margin-right: 7px
+        border-radius: 50%
+        display: inline-block
+      &:hover::before
+        background-color: mix(white, $accSecC, 20%)
+        body#page-404 &
+          background-color: $accSecC
+        
+
+
+          // transform: translateX(0)
+
+@keyframes subMenuSlideIn
+  0%
+    opacity: 0
+    transform: translateX(200px)
+  100%
+    opacity: 1
+    transform: translateX(0)
+
 
 
 .wrapper
@@ -128,13 +186,6 @@ main
         margin-bottom: 15px
         align-items: center
         justify-items: center
-        // li
-          // display: flex
-          // justify-content: center
-          // align-items: center
-          // img
-            // max-width: 44px
-            // max-height: 44px
         + a
           text-align: right
           align-self: flex-end
@@ -207,9 +258,6 @@ main
     .works-grid, ul.back
       display: grid
       gap: 4vw
-      // grid-template-columns: repeat(3, 1fr)
-      // grid-template-rows: repeat(3, 1fr)
-      // grid-template-rows: max-content
       grid-template-columns: repeat(3, 364px)
       grid-template-rows: repeat(3, 364px)
       li:first-child
@@ -220,38 +268,6 @@ main
         grid-column: 1 / 4
       li
         position: relative
-        // &::after
-        //   content: ""
-        //   display: block
-        //   position: absolute
-        //   z-index: 6     
-        //   opacity: .6
-        //   transform: rotate(-2deg)
-        //   width: 90%
-        //   height: 90%
-        //   @include mq(min, 1400)
-        //     width: calc(100% + 4px)
-        //     height: 100%
-        // &:first-child::after
-        //   background: url(/images/bg_frame01.svg) no-repeat
-        //   top: -3%
-        //   left: -1%
-        //   @include mq(min, 1400)
-        //     top: -0.5%
-        //     left: -0.5%
-        //   background-size: cover
-        // &:nth-child(2)::after, &:nth-child(3)::after
-        //   background: url(/images/bg_frame02.svg) no-repeat
-        //   top: -0.5%
-        //   left: -0.5%
-        //   background-size: cover
-        //   @include mq(min, 1600)
-        //     @include size(103%)
-        // &:last-child::after
-        //   background: url(/images/bg_frame03.svg) no-repeat
-        //   top: 1%
-        //   left: -1%
-        //   background-size: cover
         &:nth-child(1) a
           background: url(/images/work01.png) no-repeat center / cover
         &:nth-child(2) a

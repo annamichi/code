@@ -129,23 +129,28 @@ $(function() {
 
   //Mobile Nav
   if (window.innerWidth < 769) {
-    $("nav").hide();
+    // $("nav").hide();
     
       $(".sp-menu-btn").click(function() {
-        $("nav").fadeIn();
+        // $("nav").fadeIn();
         $("nav").addClass("opened");
         // $(this).hide();
       });
     
       function closeMenu() {
         $("nav").removeClass("opened");
-        $("nav").fadeOut();
+        // $("nav").fadeOut();
         // $(".sp-menu-btn")
         //   .delay(500)
         //   .fadeIn();
       }
     
       $("nav").click(function() {
+        if (window.innerWidth < 769) {
+          closeMenu();
+        }
+      });
+      $("main").click(function() {
         if (window.innerWidth < 769) {
           closeMenu();
         }
