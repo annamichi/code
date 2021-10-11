@@ -109,7 +109,7 @@ header .nav-menu {
           justify-content: space-between;
 }
 
-@media screen and (min-width: 1260px) {
+@media screen and (min-width: 1024px) {
   header .nav-menu li {
     position: relative;
   }
@@ -142,7 +142,7 @@ header .nav-menu .sub-menu {
   font-size: 80%;
 }
 
-@media screen and (min-width: 1260px) {
+@media screen and (min-width: 1024px) {
   header .nav-menu .sub-menu {
     position: absolute;
     -webkit-transition: -webkit-transform .8s ease-in;
@@ -1550,7 +1550,7 @@ body#page-404 .btn-main a:hover {
   }
 }
 
-@media screen and (min-width: 1260px) {
+@media screen and (min-width: 1280px) {
   .wrapper {
     width: 1196px;
   }

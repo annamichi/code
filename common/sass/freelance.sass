@@ -23,11 +23,13 @@ body::after
 main
   background: #fff
   margin: 54px 30px 30px
-
+  @include mq(min, 430)
+    padding: 0 20px
 
 #top
   padding-top: 15px
   padding-bottom: 30px
+  position: relative
   h1
     font-size: 120%
     text-transform: uppercase
@@ -51,28 +53,37 @@ main
     flex-direction: column-reverse
   .img-box
     padding-bottom: 30px
-    position: relative
-    > *:first-child
-      position: absolute
-      bottom: 22px
-      right: 30px
-      z-index: 10
-      width: 18%
-    > *:last-child
+    img
+      z-index: 3
       position: relative
-      z-index: 9
-    &::after
-      content: url(/work03/images/grad1_sp.svg)
-      width: calc(100% + 30px)
-      // height: 300px
-      display: block
-      position: absolute
-      bottom: -10px
-      @include mq(min, 768)
-        bottom: -50px
-      // bottom: calc(120vw - 490px)
-      left: -15px
-      z-index: 2
+    // @include mq(min, 430)
+      // padding-top: 50px
+  &::after
+    content: ""
+    background: url(/work03/images/grad1_sp.svg) no-repeat center bottom -10% / 115% auto
+    // content: url(/work03/images/grad1_sp.svg)
+    // width: calc(100% + 30px)
+      // width: calc(100% + 70px)
+      // left: -35px
+    // height: 300px
+    // width: calc(100% - 30px)
+    width: 100%
+    height: 300px
+    display: block
+    position: absolute
+    top: calc(100vw - 290px)
+    left: 0
+    z-index: 2
+    @include mq(min, 500)
+      background: url(/work03/images/grad1_sp.svg) no-repeat center bottom -10% / 100% auto
+      height: 490px
+      top: 20vw
+    // bottom: -10px
+    // @include mq(min, 768)
+      // bottom: -50px
+    // bottom: calc(120vw - 490px)
+    // left: -15px
+    // z-index: 2
   .text-box
 
 h2
@@ -89,17 +100,23 @@ h2
 #points
   width: 100vw
   transform: translateX(-30px)
+  @include mq(min, 430)
+    transform: translateX(-50px)
   padding: 30px 30px 40px
   background: url(/work03/images/points_bk_sp.jpg) no-repeat bottom right / cover, $frAccC-2
   box-shadow: 0 2px 2px 0 rgba(mix(#000, $frAccC-2, 20%), .8), 0 4px 14px 0 rgba(mix(#000, $frAccC-2, 30%), .8), 0 -4px 10px 0 rgba(mix(#fff, $frAccC-2, 20%), .3), 0 -1px 2px 0 rgba(mix(#000, $frAccC-2, 20%), .2)
   color: $white
   line-height: 1.75
+  .wrapper
+    @include mq(max, 1599)
+      width: 100%
   h2
     color: $frAccC-light
     &::before
       content: url(/work03/images/mark02.svg)
   .flex
     flex-wrap: wrap
+    flex-direction: column
   ul.mark
     margin-bottom: 20px  
     li
@@ -119,37 +136,42 @@ h2
     // justify-content: space-between
     position: relative
     // width: 100vw
-    width: 60vw
-    height: 300px
-    margin: auto
+    // width: 60vw
+    height: 80vw
+    width: 100%
+    // margin: auto
     // max-height: 300px
     img
       margin-top: 20px
       position: absolute
       // width: 300px
-      width: 80vw
+      width: calc(100vw - 30px - 30px)
       &:nth-child(1)
         // align-self: flex-start
         // transform: translateX(-36px)
         top: 0
-        left: 0
+        left: -30px
+        z-index: 20
       &:nth-child(2)
         // transform: translate(52px, 60px)
-        top: 52px
-        right: 0
+        top: 20%
+        right: -30px
+        z-index: 21
       &:nth-child(3)
         // transform: translate(-36px, 120px)
         // top: 60%
         bottom: 0
-        left: 0      
-    .img-title
-      text-transform: uppercase
-      font-weight: bold
-      letter-spacing: 0.1em
-      position: absolute
-      top: -10px
-      left: -10vw
-      // box-shadow: 0px 50px 100px -20px rgba(50, 50, 93, 0.25), 0px 30px 60px -20px rgba(0, 0, 0, 0.3)
+        left: -30px
+        z-index: 22  
+  .img-title
+    text-transform: uppercase
+    font-weight: bold
+    letter-spacing: 0.1em
+    order: -1
+    // position: absolute
+    // top: -10px
+    // left: -10vw
+    // box-shadow: 0px 50px 100px -20px rgba(50, 50, 93, 0.25), 0px 30px 60px -20px rgba(0, 0, 0, 0.3)
 
 #live
   padding-top: 40px
@@ -180,8 +202,19 @@ h2
   h3
     color: $frAccC-light
 
+#live, #thanks
+  @include mq(min, 430)
+    width: calc(100% + 40px)
+    transform: translateX(-20px)
+#live
+  .wrapper
+    @include mq2(min, 430, max, 1023)
+      width: calc(100% - 70px)
+
+
 footer
   background: #0A0046
+  
 
 @include mq2(min, 1024, max, 1489)
   header
@@ -190,190 +223,146 @@ footer
     width: calc(100% - 130px)
 
 @include mq(min, 1024)
+  main
+    margin-top: 70px
+    margin-bottom: 0
   #top
     // padding-top: 176px
-    padding-top: 110px
+    padding-top: 60px
+    padding-bottom: 50px
+    position: relative
+    &::after
+      content: ""
+      background: url(/work03/images/grad1.svg) no-repeat bottom right / 100% auto
+      width: 822px
+      display: block
+      position: absolute
+      z-index: 2
+      top: auto
+      bottom: 0
+      right: -20px
+      left: auto
+      height: 100%
+    h1
+      font-size: 3.5vw
+      margin-bottom: 40px
     .img-box
       width: 48%
       > *:first-child
-        width: 44%
+        // // bottom: auto
+        // top: 150px
+      &::after
+        content: "" 
     .flex
       flex-direction: row
       justify-content: space-between
+      align-items: center
     .text-box
       width: 48%
-
-  #board
-    h2
-      margin-bottom: 20px
-      width: 60%
-    .board-box
       position: relative
-      .text-box
-        position: absolute
-        width: 40%
-        right: 5%
-        top: 19%
-        transform: translateY(-50%)
-    .grid-8ver2
-      overflow: hidden
-      @include mq(min, 1260)
-        height: calc(1196px/1.3)
-      @include mq(min, 1518)
-        height: calc(1518px/1.3)
-      grid-template-columns: repeat(2, 1fr)
-      &, .pos-left, .pos-right
-        gap: 15px
-        @include mq(min, 1518)
-          gap: 25px
-      .pos-left, .pos-right
-        display: block
-      .pos-left
-        // grid-template-columns: repeat(2, 1fr)
-        // grid-template-rows: repeat(10, 180px)
-        > .item:nth-child(1)
-          // grid-row: span 5
-          // grid-column: auto
-        > .item:nth-child(2)
-          width: calc(48.75% - 7.5px)
-          float: left
-          margin-top: 15px
-          @include mq(min, 1518)
-            width: calc(48.75% - 12.5px)
-            margin-top: 25px
-          // grid-row: 6/8
-        > .item:nth-child(3)
-          width: calc(51.25% - 7.5px)
-          float: right
-          margin-top: 15px
-          @include mq(min, 1518)
-            width: calc(51.25% - 12.5px)
-            margin-top: 25px
-          // grid-column: 1/2
-          // grid-row: 8/10
-        > .item:nth-child(4)
-          width: calc(48.75% - 7.5px)
-          float: left
-          margin-top: 15px
-          @include mq(min, 1518)
-            width: calc(48.75% - 12.5px)
-            margin-top: 25px
-
-      .pos-right
-        > .item:nth-child(1)
-          margin-top: 63%
-          width: calc(59% - 7.5px)
-          float: left
-          @include mq(min, 1518)
-            width: calc(59% - 12.5px)
-        > .item:nth-child(2)
-          margin-top: 63%
-          width: calc(41% - 7.5px)
-          float: right
-          @include mq(min, 1518)
-            width: calc(41% - 12.5px)
-        > .item:nth-child(3)
-          width: calc(59% - 7.5px)
-          float: left
-          margin-top: 15px
-          @include mq(min, 1518)
-            width: calc(59% - 12.5px)
-            margin-top: 25px
-        > .item:nth-child(4)
-          width: calc(41% - 7.5px)
-          float: right
-          margin-top: 15px
-          @include mq(min, 1518)
-            width: calc(41% - 12.5px)
-            margin-top: 25px
-        // > .item:nth-child(5)
-  #wfs
-    .wrapper
-      position: relative
-    .img-box
-      position: relative
-      width: 100%
-      img
-        position: absolute
-        width: 45%
-        &:nth-child(1)
-          top: 0
-          left: 0
-        &:nth-child(2)
-          top: 0
-          right: 0
-        &:nth-child(3)
-          bottom: 0
-          left: 50%
-          transform: translateX(-50%)
-    .pos-left, .pos-right
-      position: absolute
-      top: calc(100% / 1.6 + 30px)
-      width: 25%
-    .pos-left
-      left: 0
-    .pos-right
-      margin-top: 0
-      right: 0
-
-
-@include mq(min, 1260)
-  #wfs
-    .pos-left, .pos-right
-      top: calc(100% / 1.6 + 60px)
-  #misc
-    .flex
-      flex-direction: row-reverse
+      z-index: 3
+  #points
+    .wrapper > .flex
+      flex-direction: row
       justify-content: space-between
-      > *
-        width: 48%
-        &:last-child
-          margin-top: 120px
-    .colors
-      width: 80%
-      margin-left: -20px
+      align-items: center
+      .pos-right
+        width: 40%
+      .pos-left
+        width: 56%  
+    .img-box
+      height: 520px
+      img
+        width: calc(40vw - 30px - 30px)
+    .img-title
+      order: 1
+      text-align: center
+      margin-top: -20px
+
+  #live
+    background: url(/work03/images/grad2.svg) no-repeat bottom right/cover
+
+  h2::before
+    width: 3vw
+    height: 3vw
+
+  #thanks
+    width: 100vw
+    transform: translateX(-50px)
+
+@include mq(min, 1025)
+  body::after
+    background: url(/work03/images/bg.jpg) no-repeat top center/cover
+
+
+@include mq(min, 1280)
+  .wrapper
+    width: calc(100% - 90px)
 
 @include mq(min, 1490)
   body
     font-size: 18px
   header
     left: calc((100vw - 1440px) / 2 )
-
+    .nav-menu
+      .sub-menu
+        li
+          background: linear-gradient(to right, #24009f, #6601b7)
+          padding: 5px
+          & + li
+            margin-top: 5px
+  main
+    // margin: 120px 60px 0
+    
   #top
-    padding-top: 150px
-    padding-bottom: 100px
+    padding-top: 60px
+    padding-bottom: 80px
     h1
-      width: 70%
-      margin-bottom: 80px
-    h2
-      margin-top: 30px
-    p
-      font-size: 110%
+      font-size: 250%
+      .font-big
+    .img-box 
+      width: 54%
+      margin-right: -40px
+    .text-box
+      width: 46%
+      // width: 70%
+      // margin-bottom: 80px
     p + p
       margin-top: 16px
-    .flex
-      > *
-        width: 46%
 
   h2
-    font-size: 375%
+    font-size: 250%
+    &::before
+      width: 32px
+      height: 32px
+    // font-size: 375%
+  .wrapper
 
-  #board
-    padding-top: 100px
-    padding-bottom: 100px
+@include mq(min, 1600)
+  main
+    margin: 9vw 8vw 0
+  #points, #thanks
+    transform: translateX(calc(-8vw - 20px))
+  #points
+    .wrapper
+      .flex
+        .pos-left
+          width: 48%
+    .img-box
+      height: 480px
+      img
+        width: calc(30vw - 30px - 30px)
+  .wrapper, #points .wrapper
+    width: 1300px
+  #live
+    padding-bottom: 3vw
+    .btn
+      margin-top: 30px
     h2
-      margin-bottom: 60px
-  
-  #wfs
-    padding-top: 80px
-    padding-bottom: 100px
-    h2
-      margin-bottom: 50px
+      margin-top: 2vw
+      margin-bottom: 2vw
+
       
 @include mq(min, 1980)
   header
     left: calc((100vw - 1660px) / 2 )
-
-  #board
-    .grid-8
-      height: calc(1660px / 1.4)

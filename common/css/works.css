@@ -52,6 +52,12 @@ h2 {
   margin: auto;
 }
 
+@media screen and (max-width: 349px) {
+  #thanks h3 {
+    max-width: 200px;
+  }
+}
+
 @media screen and (min-width: 1600px) {
   .wrapper {
     width: 1518px;
