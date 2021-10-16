@@ -307,7 +307,7 @@ footer {
   #top::after {
     content: "";
     background: url(/work03/images/grad1.svg) no-repeat bottom right/100% auto;
-    width: 822px;
+    width: 800px;
     display: block;
     position: absolute;
     z-index: 2;
@@ -323,9 +323,6 @@ footer {
   }
   #top .img-box {
     width: 48%;
-  }
-  #top .img-box::after {
-    content: "";
   }
   #top .flex {
     -webkit-box-orient: horizontal;
@@ -343,6 +340,9 @@ footer {
     width: 48%;
     position: relative;
     z-index: 3;
+  }
+  #points {
+    background: url(/work03/images/points_bk.jpg) no-repeat bottom right/cover, #6700BA;
   }
   #points .wrapper > .flex {
     -webkit-box-orient: horizontal;
@@ -363,10 +363,13 @@ footer {
     width: 56%;
   }
   #points .img-box {
-    height: 520px;
+    height: calc(40vw * 0.85);
   }
   #points .img-box img {
     width: calc(40vw - 30px - 30px);
+  }
+  #points .img-box img:nth-child(2) {
+    top: 24%;
   }
   #points .img-title {
     -webkit-box-ordinal-group: 2;
@@ -398,6 +401,47 @@ footer {
 @media screen and (min-width: 1280px) {
   .wrapper {
     width: calc(100% - 90px);
+  }
+  #top .img-box {
+    position: relative;
+  }
+  #top .img-box::before {
+    content: url(/work03/images/circles-top.svg);
+    width: 8vw;
+    height: auto;
+    left: 15%;
+    top: -25%;
+    position: absolute;
+  }
+  #live {
+    position: relative;
+  }
+  #live .img-box {
+    position: relative;
+    z-index: 4;
+  }
+  #live::before {
+    content: url(/work03/images/circles-live.svg);
+    width: 140px;
+    height: auto;
+    left: 40px;
+    top: 80px;
+    position: absolute;
+  }
+  #live::after {
+    content: url(/work03/images/circle-blue.svg);
+    width: 80px;
+    height: auto;
+    right: 80px;
+    top: -30px;
+    position: absolute;
+  }
+  #live::before, #live::after {
+    z-index: 3;
+  }
+  #points {
+    position: relative;
+    z-index: 4;
   }
 }
 
@@ -477,5 +521,19 @@ footer {
 @media screen and (min-width: 1980px) {
   header {
     left: calc((100vw - 1660px) / 2);
+  }
+  main {
+    margin: 9vw auto 0;
+    width: 1600px;
+  }
+  #points, #thanks {
+    -webkit-transform: translateX(calc((1600px - 100vw) / 2 - 20px));
+            transform: translateX(calc((1600px - 100vw) / 2 - 20px));
+  }
+  #points .img-box {
+    height: 380px;
+  }
+  #points .img-box img {
+    width: 400px;
   }
 }

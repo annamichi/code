@@ -234,7 +234,7 @@ footer
     &::after
       content: ""
       background: url(/work03/images/grad1.svg) no-repeat bottom right / 100% auto
-      width: 822px
+      width: 800px
       display: block
       position: absolute
       z-index: 2
@@ -250,9 +250,9 @@ footer
       width: 48%
       > *:first-child
         // // bottom: auto
-        // top: 150px
-      &::after
-        content: "" 
+      //   // top: 150px
+      // &::after
+      //   content: "" 
     .flex
       flex-direction: row
       justify-content: space-between
@@ -262,6 +262,7 @@ footer
       position: relative
       z-index: 3
   #points
+    background: url(/work03/images/points_bk.jpg) no-repeat bottom right / cover, $frAccC-2
     .wrapper > .flex
       flex-direction: row
       justify-content: space-between
@@ -271,9 +272,11 @@ footer
       .pos-left
         width: 56%  
     .img-box
-      height: 520px
+      height: calc(40vw * 0.85)
       img
         width: calc(40vw - 30px - 30px)
+        &:nth-child(2)
+          top: 24%
     .img-title
       order: 1
       text-align: center
@@ -298,6 +301,41 @@ footer
 @include mq(min, 1280)
   .wrapper
     width: calc(100% - 90px)
+  #top
+    .img-box
+      position: relative
+      &::before
+        content: url(/work03/images/circles-top.svg)
+        width: 8vw
+        height: auto
+        left: 15%
+        top: -25%
+        position: absolute
+  #live
+    position: relative
+    .img-box
+      position: relative
+      z-index: 4
+    &::before
+      content: url(/work03/images/circles-live.svg)
+      width: 140px
+      height: auto
+      left: 40px
+      top: 80px
+      position: absolute
+    &::after
+      content: url(/work03/images/circle-blue.svg)
+      width: 80px
+      height: auto
+      right: 80px
+      top: -30px
+      position: absolute
+    &::before, &::after
+      z-index: 3
+  #points
+    position: relative
+    z-index: 4
+
 
 @include mq(min, 1490)
   body
@@ -366,3 +404,13 @@ footer
 @include mq(min, 1980)
   header
     left: calc((100vw - 1660px) / 2 )
+  main
+    margin: 9vw auto 0
+    width: 1600px
+  #points, #thanks
+    transform: translateX(calc((1600px - 100vw) / 2 - 20px))
+  #points
+    .img-box
+      height: 380px
+      img
+        width: 400px
